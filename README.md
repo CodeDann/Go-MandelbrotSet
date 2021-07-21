@@ -10,5 +10,5 @@ This uses FindMandelbrotSet.go to iterate through the mandelbrot function 'Z(n+1
 Then displayMandelB.py takes this data.csv and outputs it in a scatter graph
 - Images folder is for any saved images of the scatter graph
 
-
+A sample output of the graphics
 ![Sample Output](images/mandelbrot.png)
