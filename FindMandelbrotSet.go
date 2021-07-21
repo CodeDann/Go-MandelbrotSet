@@ -16,10 +16,10 @@ func main() {
 	var Cmplx_CoOrds []complex128 = A[:]
 	var Float_CoOrds []float64 = B[:]
 	//loops through changing 'c'
-	for i := -20; i < 20; i++ {
+	for i := -200; i < 200; i++ {
 		for j := -10; j < 10; j++ {
-			n := float64(i) / float64(10)
-			m := float64(j) / float64(10)
+			n := float64(i) / float64(100)
+			m := float64(j) / float64(100)
 			//sets z0
 			zn := complex(0, 0i)
 			c := complex(n, m)
