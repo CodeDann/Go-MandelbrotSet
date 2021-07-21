@@ -17,7 +17,7 @@ func main() {
 	var Float_CoOrds []float64 = B[:]
 	//loops through changing 'c'
 	for i := -200; i < 200; i++ {
-		for j := -10; j < 10; j++ {
+		for j := -200; j < 200; j++ {
 			n := float64(i) / float64(100)
 			m := float64(j) / float64(100)
 			//sets z0
