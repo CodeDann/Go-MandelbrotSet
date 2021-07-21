@@ -16,7 +16,7 @@ func main() {
 	var Cmplx_CoOrds []complex128 = A[:]
 	var Float_CoOrds []float64 = B[:]
 	//loops through changing 'c'
-	for i := -10; i < 10; i++ {
+	for i := -20; i < 20; i++ {
 		for j := -10; j < 10; j++ {
 			n := float64(i) / float64(10)
 			m := float64(j) / float64(10)
@@ -36,11 +36,16 @@ func main() {
 		fmt.Println(err)
 		return
 	}
+	//explicitly ignore the error
+	_, _ = fmt.Fprintf(f, "x,y\n")
 	for k := 0; k < len(Float_CoOrds); k++ {
-		fmt.Fprintf(f, "%v,%v\n", Float_CoOrds[k], Float_CoOrds[k+1])
+		_, _ = fmt.Fprintf(f, "%v,%v\n", Float_CoOrds[k], Float_CoOrds[k+1])
 		k++
 	}
-	f.Close()
+	err = f.Close()
+	if err != nil {
+		return
+	}
 
 }
 
