@@ -11,4 +11,4 @@ Then displayMandelB.py takes this data.csv and outputs it in a scatter graph
 - Images folder is for any saved images of the scatter graph
 
 
-![Image of the output from displayMandelB](https://github.com/CodeDann/Go-MandelbrotSet/tree/main/images/mandelbrot.png?raw=true)
+![Sample Output](images/mandelbrot.png)
