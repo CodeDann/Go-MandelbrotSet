@@ -1,5 +1,6 @@
 # Go-MandelbrotSet
 A go package to find the numbers in the mandelbrot set with an additional python file to display them
+Developed as a way to learn how to use complex numbers in Go
 
 This uses FindMandelbrotSet.go to iterate through the mandelbrot function 'Z(n+1) = Z(n)^2 + C' 
 - uses a max depth of 200 
