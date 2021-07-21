@@ -31,7 +31,7 @@ func main() {
 			}
 		}
 	}
-	f, err := os.Create("output.txt")
+	f, err := os.Create("data.csv")
 	if err != nil {
 		fmt.Println(err)
 		return
