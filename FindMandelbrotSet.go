@@ -45,7 +45,7 @@ func main() {
 	//explicitly ignore the error
 	_, _ = fmt.Fprintf(f, "x,y,z\n")
 	for k := 0; k < len(Float_CoOrds); k++ {
-		_, _ = fmt.Fprintf(f, "%v,%v,%v\n", Float_CoOrds[k], Float_CoOrds[k+1], Color_Values[k])
+		_, _ = fmt.Fprintf(f, "%v,%v,%.4v\n", Float_CoOrds[k], Float_CoOrds[k+1], Color_Values[k])
 		k++
 	}
 	err = f.Close()
