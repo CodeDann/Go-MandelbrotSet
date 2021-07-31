@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"math/cmplx"
 	"os"
 )
@@ -13,8 +14,10 @@ const (
 func main() {
 	var A [2]complex128
 	var B [2]float64
+	var C [2]float64
 	var Cmplx_CoOrds []complex128 = A[:]
 	var Float_CoOrds []float64 = B[:]
+	var Color_Values []float64 = C[:]
 	//loops through changing 'c'
 	for i := -200; i < 200; i++ {
 		for j := -200; j < 200; j++ {
@@ -24,10 +27,13 @@ func main() {
 			zn := complex(0, 0i)
 			c := complex(n, m)
 			if isInSet(zn, c) {
-				//fmt.Printf("%v,%v\n", n, m)
+				//find 1-Log(Log2(Abs(c) for color values
+				cAbs := cmplx.Abs(c)
+				colorValue := math.Log(math.Log2(cAbs))
 				Cmplx_CoOrds = append(Cmplx_CoOrds, c)
 				Float_CoOrds = append(Float_CoOrds, n)
 				Float_CoOrds = append(Float_CoOrds, m)
+				Color_Values = append(Color_Values, 1-colorValue)
 			}
 		}
 	}
@@ -37,9 +43,9 @@ func main() {
 		return
 	}
 	//explicitly ignore the error
-	_, _ = fmt.Fprintf(f, "x,y\n")
+	_, _ = fmt.Fprintf(f, "x,y,z\n")
 	for k := 0; k < len(Float_CoOrds); k++ {
-		_, _ = fmt.Fprintf(f, "%v,%v\n", Float_CoOrds[k], Float_CoOrds[k+1])
+		_, _ = fmt.Fprintf(f, "%v,%v,%v\n", Float_CoOrds[k], Float_CoOrds[k+1], Color_Values[k])
 		k++
 	}
 	err = f.Close()
